@@ -4,7 +4,7 @@ const hbs=require('hbs')
 
 let app=express();
 
-
+const port =process.env.PORT || 3000
 app.set('view engine','hbs')
 
 app.use((req,res,next)=>{
@@ -31,4 +31,6 @@ app.get('/about',(req,res)=>{
 
 
 
-app.listen('3000')
+app.listen(port,()=>{
+    console.log('server is up')
+})
